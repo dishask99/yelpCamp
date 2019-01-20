@@ -47,7 +47,8 @@ app.use(function(req,res,next){  //whatever function we put in app.use is provid
 
 
 //mongoose.connect("mongodb://localhost/yelp_camp",{ useNewUrlParser: true });
-mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true });
+var URL = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(URL,{ useNewUrlParser: true });
 //mongodb://<dbuser>:<dbpassword>@ds155294.mlab.com:55294/yelp_camp
 
 

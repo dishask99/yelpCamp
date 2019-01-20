@@ -1,0 +1,34 @@
+body {
+  background-image: url("http://i.imgur.com/2LSMCmJ.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-size: cover;
+}
+h1{
+  color: white;
+  letter-spacing: 3px;
+}
+
+#container {
+    position: fixed;
+    width: 400px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    margin-top: -140px;
+    margin-left: -170px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    background-color: rgb(255,255,255,0.2);
+    text-shadow: 0px 3px 5px rgba(0,0,0,0.7),
+              0px 5px 7px rgba(0,0,0,0.5),
+              0px 7px 9px rgba(0,0,0,0.3);
+             
+    
+}
+h1{
+    font-size: 35px;
+}
+

@@ -1,0 +1,35 @@
+body{
+   font-family: 'Encode Sans Condensed', sans-serif;
+   letter-spacing: 1px;
+   background-image: url("https://media.istockphoto.com/photos/tents-high-altitude-basecamp-mountain-peaks-panorama-annapurna-nepal-picture-id487825432");
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-attachment: fixed;
+}
+
+.container .container .jumbotron{
+  border-radius: 0px;
+  width: 839px;
+  margin-top: 20px;
+    
+}
+.row{
+    margin: 0px;
+    margin-right: 23px;
+}
+.container-narrow {
+    background-color: rgb(255, 255, 230,0.5);
+    width: 900px;
+    
+}
+
+
+.thumbnail{
+  
+}
+body{
+    background-color: black
+}
+.jumbotron{
+    position: relative;
+}

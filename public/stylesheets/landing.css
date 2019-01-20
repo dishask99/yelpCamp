@@ -1,5 +1,7 @@
 body{
     background-color: black;
+    font-family: 'Acme', sans-serif;
+    letter-spacing: 2px;
 }
 
 #landing-header{
@@ -8,6 +10,10 @@ body{
     z-index: 1;
     position: relative;
     margin-top: 50vh;/*50 viewport height 50% of total height*/
+}
+h1{
+  font-weight: 700;
+ font-size: 4em;
 }
 
 .slideshow { 
@@ -76,4 +82,11 @@ body{
 /* Older browser support - class added by modernizr */
 .no-cssanimations .slideshow li {
 	opacity: 1;
+}
+
+.row
+{
+ text-shadow: 0px 3px 5px rgba(0,0,0,0.7),
+              0px 5px 7px rgba(0,0,0,0.5),
+              0px 7px 9px rgba(0,0,0,0.3);
 }
