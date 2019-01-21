@@ -99,9 +99,9 @@ router.get("/:id",function(req, res){
 
 //edit route
 
-router.get("/:id/edit",middleware.checkCampgroundOwnership,async function(req,res){
+router.get("/:id/edit",middleware.checkCampgroundOwnership,function(req,res){
   //we have checked everything in checkedownership middleware so no need to use err in the below function yoiii............
-        Campground.findById(req.params.id,async function(err,foundCampground){
+        Campground.findById(req.params.id,function(err,foundCampground){
               if(err){
                   console.log(err);
                   req.flash("error","Something went wrong");
