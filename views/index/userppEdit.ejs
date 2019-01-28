@@ -9,6 +9,44 @@
         <link rel="stylesheet" href="/stylesheets/rform.css">
          <link rel="stylesheet" href="/stylesheets/main.css">
          <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+         <style>
+             body{
+    background-image: url("http://i.imgur.com/emvhOnb.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'PT Sans Caption', sans-serif;
+}
+h1{
+    color: white;
+    letter-spacing: 3px;
+}
+
+#container {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    margin-top: -140px;
+    margin-left: -170px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+     background-color: rgb(255,255,255,0.2);
+    text-shadow: 0px 3px 5px rgba(0,0,0,0.7),
+              0px 5px 7px rgba(0,0,0,0.5),
+              0px 7px 9px rgba(0,0,0,0.3);
+    padding-top:20px ;
+    padding-bottom: 20px;
+   
+    
+}
+label{
+  color: white;
+  font-size: 17px;
+}
+         </style>
     </head>
     <body>
         
@@ -23,12 +61,13 @@
            <li><a href="/login">Login</a></li>
            <li><a href="/register">Sign Up</a></li>
            <% }else{ %>
-           <li><a href="#">Signed In As <%=currentUser.username%></a></li>
+           <li><a href="/user/<%=currentUser._id%>">Signed In As <%=currentUser.username%></a></li>
            <li><a href="/logout">Logout</a></li>
            <% } %>
        </ul>
      </div>
   </div>
+  
 </nav>
 <div class="container">
     <% if(error && error.length > 0){ %><!--if([]) is not falsy so even if error is empty then if statement will work so we have to check error.length-->
@@ -46,27 +85,31 @@
 
 
         
-<div class="container">
-
+<div class="container" id="container">
+   <h1 style="color:white; font-size: 25px; text-align: center;">
+       EDIT USER INFO
+   </h1>
    <form action="/user/<%=currentUser._id%>" method="POST" enctype="multipart/form-data">
         <div class="form-group">
+            <label for="username">Username</label>
     <input class="form-control form-control-lg"  type="text" placeholder="Username" name="username" value="<%=currentUser.username%>">
     </div>
    
      <div class="form-group">
+         <label for="firstName">First Name</label>
     <input class="form-control form-control-lg"  type="text" placeholder="First Name" name="firstName" value="<%=currentUser.firstName%>">
     </div>
     <div class="form-group">
+        <label for="lastName">Last Name</label>
     <input class="form-control form-control-lg" type="text" placeholder="Last Name" name="lastName" value="<%=currentUser.lastName%>">
     </div>
      <div class="form-group">
+         <label for="email">Email</label>
     <input class="form-control form-control-lg"  type="email" placeholder="E-mail" name="email" value="<%=currentUser.email%>">
     </div>
+    
      <div class="form-group">
-    <input class="form-control form-control-lg"  type="text" placeholder="Avatar URL" name="avatar" value="<%=currentUser.avatar%>">
-    </div>
-     <div class="form-group">
-                    <label for="image">Image</label>
+                    <label for="image">Profile Photo</label>
                     <input type="file" id="image" name="image" accept="image/*" value="<%=currentUser.image%>">
     </div>
     <button class="btn btn-lg btn-primary btn-block">Submit</button>

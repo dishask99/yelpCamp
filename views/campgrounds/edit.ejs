@@ -24,7 +24,7 @@
            <li><a href="/login">Login</a></li>
            <li><a href="/register">Sign Up</a></li>
            <% }else{ %>
-           <li><a href="#">Signed In As <%=currentUser.username%></a></li>
+           <li><a href="/user/<%=currentUser._id%>">Signed In As <%=currentUser.username%></a></li>
            <li><a href="/logout">Logout</a></li>
            <% } %>
        </ul>
@@ -77,7 +77,7 @@
        <div class="form-group">
           <button class="btn btn-lg btn-primary btn-block">Submit</button>
        </div>
-       <a style="font-size:27px" href="/campgrounds"><i class="fa fa-arrow-circle-left"></i></button>
+       <a style="font-size:27px" href="/campgrounds"><i class="fa fa-arrow-circle-left"></i></a>
     </form>
     </div>
    </div>

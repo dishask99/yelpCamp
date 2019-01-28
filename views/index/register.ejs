@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/stylesheets/rform.css">
          <link rel="stylesheet" href="/stylesheets/main.css">
          <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     </head>
     <body>
         
@@ -18,12 +19,12 @@
        <a class="navbar-brand" href="/">YelpCamp</a>
      </div>
      <div class="collapse navbar-collapse">
-       <ul class="nav navbar-nav navbar-right">
+       <ul class="nav navbar-nav navbar-right" style="font-size: 15px;">
            <% if(!currentUser){ %>
            <li><a href="/login">Login</a></li>
            <li><a href="/register">Sign Up</a></li>
            <% }else{ %>
-           <li><a href="#">Signed In As <%=currentUser.username%></a></li>
+           <li><a href="/user/<%=currentUser._id%>">Signed In As <%=currentUser.username%></a></li>
            <li><a href="/logout">Logout</a></li>
            <% } %>
        </ul>
@@ -48,7 +49,7 @@
         
 <div class="container">
 <div id="container">
-<h1 style="text-align: center">REGISTER PAGE</h1>
+<h1 style="text-align: center; font-size: 25px;">REGISTER PAGE</h1>
 
 <form style = "width: 300px;margin: 25px auto" action="/register" method="POST" enctype="multipart/form-data">
     <div class="form-group">
@@ -66,16 +67,15 @@
      <div class="form-group">
     <input class="form-control form-control-lg"  type="email" placeholder="E-mail" name="email">
     </div>
-     <div class="form-group">
-    <input class="form-control form-control-lg"  type="text" placeholder="Avatar URL" name="avatar">
-    </div>
+     
    
      <div class="form-group">
-                    <label for="image"><div><i class="fas fa-image"></i> Image :</label>
+                    <label for="image" style="color: white; font-size: 19px;"><div><i class="fas fa-image"></i>Upload Profile Photo</label>
                     <input type="file" style="color:black;" class="btn btn-secondary btn-lg" id="image" name="image" accept="image/*"  >   
                 </div>
                 </div>
-    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+    <button style="margin-bottom:10px;"  class="btn btn-lg btn-primary btn-block">Submit</button>
+    <a style="font-size:27px" href="/campgrounds"><i class="fa fa-arrow-circle-left"></i></a>
     </div>
 </form>
 </div>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+ 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -143,10 +143,45 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <body>
+  
+  
+<div class="container">
+    <% if(error && error.length > 0){ %><!--if([]) is not falsy so even if error is empty then if statement will work so we have to check error.length-->
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert">
+        <%= success %>
+      </div>
+    <% } %>    
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">YelpCamp</a>
+  
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav navbar-right float-md-right">
+      <% if(!currentUser){ %>
+      <a class="nav-item nav-link" href="/login">Login</a>
+        <a class="nav-item nav-link" href="/register">Sign Up</a>
+      <% }else{ %>
+       <a class="nav-item nav-link disabled" href="/user/<%=currentUser._id%>">Signed In As <%=currentUser.username%></a>
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+     <% }%>
+    
+     
+    </div>
+  </div>
+</nav>
+
+
+        
+
     <div class="container main-secction">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 image-section">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
+                <img style="height: 325px;" src="http://7gigzxopz0uiqxo1-zippykid.netdna-ssl.com/wp-content/uploads//2015/03/Quote_9.jpg">
             </div>
             <div class="row user-left-part">
                 <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
@@ -173,9 +208,7 @@
                                     <h1>Hello! <%=currentUser.username%></h1>
                                     <h5>Developer</h5>
                                 </div>
-                                <div class="col-md-4 col-sm-6 col-xs-6 profile-header-section1 text-right pull-rigth">
-                                    <a href="/search" class="btn btn-primary btn-block">Seguir buscando</a>
-                                </div>
+                               
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -207,7 +240,7 @@
                                                                     <label>Email</label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p>dishask99@gmail.com</p>
+                                                                    <p><%=currentUser.email%></p>
                                                                 </div>
                                                             </div>
                                                             

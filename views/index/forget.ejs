@@ -8,9 +8,8 @@
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
         <link rel="stylesheet" href="/stylesheets/lform.css">
          <link rel="stylesheet" href="/stylesheets/main.css">
-         
-              <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-              <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
+             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+         <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
     </head>
     <body>
         
@@ -49,19 +48,16 @@
 
         
 <div class="container">
-<div id="container">
-<h1 style="text-align: center; font-size: 23px;">LOGIN PAGE</h1>
+<div id="container" style="height: auto; width: 400px;">
 
-<form style = "width: 300px;margin: 25px auto" action="/login" method="POST">
-     <div class="form-group">
-    <input class="form-control form-control-lg" type="text" placeholder="Username" name="username">
-    </div>
-     <div class="form-group">
-    <input class="form-control form-control-lg" type="password" placeholder="Password" name="password">
-    </div>
-    <button style="margin-bottom:10px;" class="btn btn-lg btn-primary btn-block">Login</button>
-    <a href="/forget" class="pull-right">Forgot Password</a>
-    <a style="font-size:27px;" href="/campgrounds"><i class="fa fa-arrow-circle-left"></i></a>
+<form action="/forget" method="POST" style="width: 350px; margin-left: 20px; margin-bottom: 10px;">
+  <div class="form-group">
+       <label for="email" style="text-align: center; color: white; font-size: 17px;">Email :</label>
+       <input type="email" name="email" class="form-control" placeholder="Email Address">
+  </div>
+  <div class="form-group" style="margin-bottom:10px;" >
+      <input type="Submit" class="btn btn-primary" value="Reset password">
+  </div>
+  <a style="font-size:27px" href="/campgrounds"><i class="fa fa-arrow-circle-left"></i></a>
 </form>
-</div>
-<%include ../partials/footer%>
+<% include ../partials/footer.ejs%>
